@@ -15,7 +15,10 @@ OC_DEFCONFIG=j1mini3g-OC_defconfig
 NAME=LightKernel
 VERSION=LightKernel-v5
 OC_VERSION=LightKernel-v5-OC
-rm -rf $(pwd)/out
+
+if [ -d $(pwd)/out ]; then
+ rm -rf $(pwd)/out;
+fi;
 
 if [ -f $(pwd)/kernel_zip/tools/Image ]; then
  rm -f $(pwd)/kernel_zip/tools/Image;
