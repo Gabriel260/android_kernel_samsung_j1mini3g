@@ -17,6 +17,7 @@ VERSION=LightKernel-v5
 OC_VERSION=LightKernel-v5-OC
 
 export ARCH=arm
+export CROSS_COMPILE=$(pwd)/toolchain/bin/arm-eabi-
 
 KERNEL_PATH=$(pwd)
 KERNEL_ZIP=${KERNEL_PATH}/kernel_zip
@@ -133,23 +134,6 @@ function clean() {
 
 function main() {
 	clear;
-	read -p "Please specify Toolchain path: " tcpath;
-	if [ "${tcpath}" == "" ]; then
-		echo -e "$red"
-		export CROSS_COMPILE=~/arm-eabi-6.x/bin/arm-eabi-;
-		echo -e "No toolchain path found. Using default local one:$nocol ${CROSS_COMPILE}";
-	else
-		export CROSS_COMPILE=${tcpath};
-		echo -e "$red";
-		echo -e "Specified toolchain path: $nocol ${CROSS_COMPILE}";
-	fi;
-	if [ "${USE_CCACHE}" == "1" ]; then
-		CCACHE_PATH=/usr/bin/ccache;
-		export CROSS_COMPILE="${CCACHE_PATH} ${CROSS_COMPILE}";
-		export JOBS=8;
-		echo -e "$red";
-		echo -e "You have enabled ccache through *export USE_CCACHE=1*, now using ccache...$nocol";
-	fi;
 
 	echo -e "***************************************************************";
 	echo "      LightKernel for Samsung Galaxy J1 Mini                   ";
