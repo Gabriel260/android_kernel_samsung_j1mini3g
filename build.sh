@@ -28,6 +28,8 @@ if [ -f $(pwd)/kernel_zip/tools/dt.img ]; then
  rm -f $(pwd)/kernel_zip/tools/dt.img;
 fi;
 
+export KBUILD_BUILD_USER=Gabriel
+export KBUILD_BUILD_HOST=Ubuntu
 export ARCH=arm
 export CROSS_COMPILE=$(pwd)/toolchain/bin/arm-eabi-
 
