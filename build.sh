@@ -15,6 +15,15 @@ OC_DEFCONFIG=j1mini3g-OC_defconfig
 NAME=LightKernel
 VERSION=LightKernel-v5
 OC_VERSION=LightKernel-v5-OC
+rm -rf $(pwd)/out
+
+if [ -f $(pwd)/kernel_zip/tools/Image ]; then
+ rm -f $(pwd)/kernel_zip/tools/Image;
+fi;
+
+if [ -f $(pwd)/kernel_zip/tools/dt.img ]; then
+ rm -f $(pwd)/kernel_zip/tools/dt.img;
+fi;
 
 export ARCH=arm
 export CROSS_COMPILE=$(pwd)/toolchain/bin/arm-eabi-
@@ -165,3 +174,4 @@ function main() {
 }
 
 main $@
+
