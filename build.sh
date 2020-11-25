@@ -13,8 +13,8 @@ PLATFORM=sc8830
 DEFCONFIG=j1mini3g_defconfig
 OC_DEFCONFIG=j1mini3g-OC_defconfig
 NAME=LightKernel
-VERSION=LightKernel-v5
-OC_VERSION=LightKernel-v5-OC
+VERSION=LightKernel-v6
+OC_VERSION=LightKernel-v6-OC
 
 if [ -d $(pwd)/out ]; then
  rm -rf $(pwd)/out;
