@@ -146,5 +146,37 @@ function clean() {
 	echo -e "Done!$nocol";
 }
 
-oc_build
-make_zip
+function main() {
+	clear;
+
+	echo -e "***************************************************************";
+	echo "      LightKernel for Samsung Galaxy J1 Mini                   ";
+	echo -e "***************************************************************";
+	echo "Choices:";
+	echo "1. Cleanup source";
+	echo "2. Build kernel";
+	echo "3. Build kernel then make flashable ZIP";
+	echo "4. Make flashable ZIP package";
+	echo "5. Build overclocked kernel";
+	echo "6. Build overclocked kernel then make flashable ZIP";
+	echo "Leave empty to exit this script (it'll show invalid choice)";
+
+	read -n 1 -p "Select your choice: " -s choice;
+	case ${choice} in
+		1) clean;;
+		2) build;;
+		3) build
+		   make_zip;;
+		4) make_zip;;
+		5) oc_build;;
+		6) oc_build
+		   make_zip;;
+		*) echo
+		   echo "Invalid choice entered. Exiting..."
+		   sleep 2;
+		   exit 1;;
+	esac
+}
+
+main $@
+
